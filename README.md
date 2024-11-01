@@ -19,9 +19,8 @@ Prototype tool for remote scrum retro’s.
 ## Functionality
 
 - Add / Remove retro ticket to category
-- Add / Remove category
 - Vote / unvote for ticket
-- Pasworldess login with magic link
+- Login authenticator
 
 ### Tech stack
 
@@ -164,8 +163,8 @@ I will also implement basic accesibility practicies:
 
 No BE due to time limit, but I will implement
 
-- a simple magic link with email for paswordless login
-- a JSON file that serves as a mock for the API response
+- a simple login authenticator with a randomly generated JWT. I was thinking of doing an e-mail maigc link, but have given up on this due to a lack of time.
+- initial hard coded data in state managment (Context). Normally this data would be received from API calls.
 
 ### Design
 
@@ -234,5 +233,6 @@ I will not implement that in this app due to the time limit and scale, but norma
 - adding e2e testing
 - adding more elborate accesibility testing
 - adding a more specific UI
+- add error handling; fallbacks for when components cannot render to generic Error components, error page for bigger errors, error UI for user to show auth related issues etc.
 - adding multiple authentication methods
 - adding more functionalities such as as setting a max number of votes, a more friendly ticket creation UI, adding labels to the tickets, adding automatic sorting by number of votes etc.
