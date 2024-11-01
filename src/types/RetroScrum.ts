@@ -1,10 +1,10 @@
-export type RetroTicket = {
+export type RetroTicketType = {
     title: string;
     votes: Set<string>;
 };
 
-export type RetroCategory = {
+export type RetroCategoryType = {
     title: string;
-    tickets: RetroTicket[];
+    tickets: RetroTicketType[];
 };
 

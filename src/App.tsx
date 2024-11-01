@@ -3,6 +3,7 @@ import { LoginPage } from "components/pages/LoginPage";
 import { HomePage } from "components/pages/HomePage";
 import { ProtectedRoute } from "components/templates/ProtectedRoute";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { RetroScrumProvider } from "context/RetroScrumContext";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
             path="/"
             element={
               <ProtectedRoute>
-                <HomePage />
+                <RetroScrumProvider>
+                  <HomePage />
+                </RetroScrumProvider>
               </ProtectedRoute>
             }
           />
