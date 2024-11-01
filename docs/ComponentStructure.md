@@ -4,27 +4,29 @@ These components do NOT include auth / routing related components. This document
 
 ## Atoms
 
-### CategoryHeader
+### CategoryHeading
 
-Header column of a single category
+Heading column of a single category
 **props**
 
 ```bash
     Children: ReactComponent
 ```
 
-### VoteSymbol
+### TheButton
 
-Symbol for showcasing a single vote on a retro ticket
 **props**
 
 ```bash
-    N/A
+    ariaLabel: string
+    type?: HTMLButtonElement["type"]
+    clickFunction: Function
+    variant: 'cancel' | 'confirm' | 'default'
 ```
 
-### AddButton
+### VoteSymbol
 
-Button for creating a ticket
+Symbol for showcasing a single vote on a retro ticket
 **props**
 
 ```bash
@@ -58,11 +60,26 @@ Single ticket for a retro scrum insight. User can click to add or remove vote.
 
 ### RetroTicketForm
 
+Form in which user can create a new ticket for a specific category.
+
+- User can either cancel or add a new ticket
+- Uses `RetroTicketInput.tsx` as child.
+- Validates that the input is at least 3 symbols long.
+- **props**
+
+```bash
+    onCancel: Function
+    onConfrim: Function
+```
+
 ## Organisms
 
 ### RetroCategory
 
-List with multiple retro tickets
+List with multiple retro tickets.
+
+- features a "add ticket" button to add ticket to the category
+
 **props**
 
 ```bash
@@ -72,10 +89,10 @@ List with multiple retro tickets
 
 ### ScrumBoard
 
-Board that encapulates 1 retro scrum session
+Board that encapulates 1 retro scrum session.
 
 **props**
 
 ```bash
-    categories: RetroTicketList[]
+    content: RetroCategory[]
 ```
