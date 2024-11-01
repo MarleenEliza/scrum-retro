@@ -41,7 +41,15 @@ https://bradfrost.com/blog/post/atomic-web-design/
 Following a common git branching model with **kebab-case**
 https://nvie.com/posts/a-successful-git-branching-model/
 
-```
+Due to the small scale of this app, I will limit the branches to the below:
+
+```bash
+# What I will do for this app
+/feature
+/hotfix
+/main
+
+# what I would normally do
 /feature
 /hotfix
 /release
@@ -52,10 +60,8 @@ https://nvie.com/posts/a-successful-git-branching-model/
 ### Development flow
 
 1. dev works on specifically named branch
-2. dev pushes PR to be added to the develop branch
+2. dev pushes PR to be added to the main branch
 3. PR gets reviewed and merged
-4. periodically develop will be pushed to main
-5. specific releases will be planned where main will be pushed to release
 
 ## Thoughts
 
