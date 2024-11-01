@@ -221,7 +221,7 @@ I will not implement that in this app due to the time limit and scale, but norma
 
 1. write this README with thoughts and questions I would normally ask BEFORE coding.
 2. Decide on Component Structure (see different docs file)
-3. Decide on state management and types with simple `RetroScrumContext.tsx`
+3. Decide on state management and types with simple `RetroScrumContext.tsx` and `AuthContext.tsx`
 4. Code components according to atomic design
 5. Code functionalities with focus on accesibility
 6. Add simple UI with TailwindCSS
