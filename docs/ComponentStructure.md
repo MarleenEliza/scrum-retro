@@ -1,5 +1,7 @@
 # Component Structure
 
+These components do NOT include auth / routing related components. This document serves as an overview for the UI components.
+
 ## Atoms
 
 ### CategoryHeader

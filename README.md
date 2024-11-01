@@ -19,15 +19,40 @@ Prototype tool for remote scrum retro’s.
 ## Functionality
 
 - Add / Remove retro ticket to category
-- Add / Remove category
 - Vote / unvote for ticket
-- Pasworldess login with magic link
+- Login authenticator
 
 ### Tech stack
 
 - TypeScript → chosen because of more robust, easier coding
 - ReactJS → chosen for fast development due to many support and plugins being readily available. I am also most proficient with this framework compared to others.
 - TailWind CSS → chosen to speed up development process whilst still being lightweight
+
+## how to run
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn start`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+### `yarn test`
+
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+
+### `yarn build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ## Component structure
 
@@ -138,8 +163,8 @@ I will also implement basic accesibility practicies:
 
 No BE due to time limit, but I will implement
 
-- a simple magic link with email for paswordless login
-- a JSON file that serves as a mock for the API response
+- a simple login authenticator with a randomly generated JWT. I was thinking of doing an e-mail maigc link, but have given up on this due to a lack of time.
+- initial hard coded data in state managment (Context). Normally this data would be received from API calls.
 
 ### Design
 
@@ -196,7 +221,7 @@ I will not implement that in this app due to the time limit and scale, but norma
 
 1. write this README with thoughts and questions I would normally ask BEFORE coding.
 2. Decide on Component Structure (see different docs file)
-3. Decide on state management and types with simple `RetroScrumContext.tsx`
+3. Decide on state management and types with simple `RetroScrumContext.tsx` and `AuthContext.tsx`
 4. Code components according to atomic design
 5. Code functionalities with focus on accesibility
 6. Add simple UI with TailwindCSS
@@ -208,5 +233,6 @@ I will not implement that in this app due to the time limit and scale, but norma
 - adding e2e testing
 - adding more elborate accesibility testing
 - adding a more specific UI
+- add error handling; fallbacks for when components cannot render to generic Error components, error page for bigger errors, error UI for user to show auth related issues etc.
 - adding multiple authentication methods
 - adding more functionalities such as as setting a max number of votes, a more friendly ticket creation UI, adding labels to the tickets, adding automatic sorting by number of votes etc.
