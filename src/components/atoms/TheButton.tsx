@@ -12,7 +12,7 @@ interface TheButtonProps {
 const STYLING_BY_VARIANT = {
   confirm:
     "bg-green-500 text-white rounded hover:bg-green-600 focus:ring-green-400",
-  cancel: "",
+  cancel: "bg-gray-200 rounded hover:bg-gray-400 focus:ring-gray-400",
   default:
     "bg-blue-500 text-white rounded hover:bg-blue-600 focus:ring-blue-400",
 } as const;

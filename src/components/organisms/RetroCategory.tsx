@@ -77,7 +77,7 @@ export const RetroCategory: React.FC<RetroCategoryProps> = ({
           />
         ))
       ) : (
-        <p className="text-gray-600">No tickets available</p>
+        <p className="text-gray-600 mb-2">No tickets yet</p>
       )}
       {isNewTicketForm ? (
         <RetroTicketForm
@@ -88,6 +88,7 @@ export const RetroCategory: React.FC<RetroCategoryProps> = ({
         <TheButton
           ariaLabel="Add new ticket"
           type="button"
+          variant="default"
           clickFunction={toggleIsNewTicketForm}
         >
           Add Ticket
