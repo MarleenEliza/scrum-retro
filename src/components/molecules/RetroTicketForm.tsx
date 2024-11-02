@@ -37,12 +37,18 @@ export const RetroTicketForm: React.FC<RetroTicketFormProps> = ({
     >
       <RetroTicketInput value={inputValue} onChange={handleInputChange} />
       <div className="flex justify-end mt-3 space-x-2">
-        <TheButton ariaLabel="Cancel ticket creation" clickFunction={onCancel}>
+        <TheButton
+          ariaLabel="Cancel ticket creation"
+          clickFunction={onCancel}
+          variant="cancel"
+          type="button"
+        >
           Cancel
         </TheButton>
         <TheButton
           ariaLabel="Confirm ticket creation"
           clickFunction={handleFormSubmit}
+          variant="confirm"
           type="submit"
         >
           Add Ticket

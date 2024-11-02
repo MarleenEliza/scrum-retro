@@ -37,8 +37,24 @@ export const RetroScrumProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [categories, setCategories] = useState<RetroCategoryType[]>([
-    { title: "Good", tickets: [] },
-    { title: "Bad", tickets: [] },
+    {
+      title: "Good",
+      tickets: [
+        {
+          votes: new Set(["userA", "userB"]),
+          title: "Good communication within team",
+        },
+      ],
+    },
+    {
+      title: "Bad",
+      tickets: [
+        {
+          votes: new Set(["userA"]),
+          title: "Misscommunication issues with client",
+        },
+      ],
+    },
     { title: "Actions", tickets: [] },
     { title: "Ideas", tickets: [] },
   ]);
@@ -74,9 +90,13 @@ export const RetroScrumProvider: React.FC<{ children: ReactNode }> = ({
       const updatedCategories = [...prevCategories];
       const ticket = updatedCategories[categoryIndex].tickets[ticketIndex];
 
+      // copy set for reactivity. (You end up setting a new Set)
+      const newSet = new Set(ticket.votes);
+
       // Add the token if it doesn't already exist in the set
-      if (!ticket.votes.has(token)) {
-        ticket.votes.add(token);
+      if (!newSet.has(token)) {
+        newSet.add(token);
+        ticket.votes = newSet;
       }
 
       return updatedCategories;
@@ -92,9 +112,13 @@ export const RetroScrumProvider: React.FC<{ children: ReactNode }> = ({
       const updatedCategories = [...prevCategories];
       const ticket = updatedCategories[categoryIndex].tickets[ticketIndex];
 
+      // copy set for reactivity. (You end up setting a new Set)
+      const newSet = new Set(ticket.votes);
+
       // Remove the token if it exists in the set
-      if (ticket.votes.has(token)) {
-        ticket.votes.delete(token);
+      if (newSet.has(token)) {
+        newSet.delete(token);
+        ticket.votes = newSet;
       }
 
       return updatedCategories;

@@ -15,8 +15,12 @@ export const RetroCategory: React.FC<RetroCategoryProps> = ({
   tickets,
   categoryIndex,
 }) => {
-  const { addVoteToTicket, removeVoteFromTicket, addTicketToCategory } =
-    useRetroScrumContext();
+  const {
+    addVoteToTicket,
+    removeVoteFromTicket,
+    addTicketToCategory,
+    removeTicketFromCategory,
+  } = useRetroScrumContext();
   const { token } = useAuthContext();
   const [isNewTicketForm, setIsNewTicketForm] = useState(false);
   const toggleIsNewTicketForm = () => {
@@ -33,7 +37,7 @@ export const RetroCategory: React.FC<RetroCategoryProps> = ({
     }
   };
 
-  const onRemove = (ticketIndex: number) => {
+  const onRemoveVote = (ticketIndex: number) => {
     try {
       if (!token) throw Error("unable to acces token for voting");
       removeVoteFromTicket(categoryIndex, ticketIndex, token);
@@ -66,13 +70,14 @@ export const RetroCategory: React.FC<RetroCategoryProps> = ({
           <RetroTicket
             key={index}
             title={ticket.title}
-            numberOfVotes={ticket.votes.size}
+            votes={ticket.votes}
             onVote={() => onVote(index)}
-            onRemove={() => onRemove(index)}
+            onRemoveVote={() => onRemoveVote(index)}
+            onRemove={() => removeTicketFromCategory(categoryIndex, index)}
           />
         ))
       ) : (
-        <p className="text-gray-600">No tickets available</p>
+        <p className="text-gray-600 mb-2">No tickets yet</p>
       )}
       {isNewTicketForm ? (
         <RetroTicketForm
@@ -83,6 +88,7 @@ export const RetroCategory: React.FC<RetroCategoryProps> = ({
         <TheButton
           ariaLabel="Add new ticket"
           type="button"
+          variant="default"
           clickFunction={toggleIsNewTicketForm}
         >
           Add Ticket

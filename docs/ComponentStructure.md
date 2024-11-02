@@ -26,11 +26,14 @@ Heading column of a single category
 
 ### VoteSymbol
 
-Symbol for showcasing a single vote on a retro ticket
-**props**
+Symbol for showcasing a single vote on a retro ticket.
+
+- Empty when there is no vote
+- Colored when the vote is by the user
+  **props**
 
 ```bash
-    N/A
+    variant: 'default' | 'empty' | 'primary'
 ```
 
 ### RetroTicketInput
