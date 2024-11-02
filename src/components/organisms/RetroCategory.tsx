@@ -66,7 +66,7 @@ export const RetroCategory: React.FC<RetroCategoryProps> = ({
           <RetroTicket
             key={index}
             title={ticket.title}
-            numberOfVotes={ticket.votes.size}
+            votes={ticket.votes}
             onVote={() => onVote(index)}
             onRemove={() => onRemove(index)}
           />
