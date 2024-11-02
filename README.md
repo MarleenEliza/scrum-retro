@@ -4,6 +4,10 @@
 
 Prototype tool for remote scrum retro’s.
 
+## Demo
+
+https://retro-scrum.netlify.app/
+
 ### Meta Goal
 
 - Demonstrate working style
@@ -232,7 +236,8 @@ I will not implement that in this app due to the time limit and scale, but norma
 - integrating real BE
 - adding e2e testing
 - adding more elborate accesibility testing
-- adding a more specific UI
+- adding a more specific UI. Think themed colors (maybe set up a tailwind theme? etc.)
+- Set up a proper build pipeline with ENVs. Right now it is very minimalistic and just uses the standard configuration for all build types.
 - add error handling; fallbacks for when components cannot render to generic Error components, error page for bigger errors, error UI for user to show auth related issues etc.
 - adding multiple authentication methods
 - adding more functionalities such as as setting a max number of votes, a more friendly ticket creation UI, adding labels to the tickets, adding automatic sorting by number of votes etc.
