@@ -14,6 +14,7 @@ export const LoginForm: React.FC = () => {
       <TheButton
         ariaLabel="login button"
         clickFunction={() => {}}
+        variant="confirm"
         type="submit"
       >
         Log in

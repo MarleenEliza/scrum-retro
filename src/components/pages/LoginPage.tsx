@@ -14,8 +14,8 @@ export const LoginPage: React.FC = () => {
   }, [validateLogin, error]);
 
   return (
-    <div>
-      <h1>Login Page</h1>
+    <div className="flex items-center flex-col gap-4">
+      <h1 className="font-bold text-2xl mb-4">Login Page</h1>
       <LoginForm />
     </div>
   );

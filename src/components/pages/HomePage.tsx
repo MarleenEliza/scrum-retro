@@ -5,8 +5,8 @@ export const HomePage: React.FC = () => {
   const { categories } = useRetroScrumContext();
 
   return (
-    <div>
-      <h1>Home Page</h1>
+    <div className="my-4 mx-6 lg:mx-8 lg:my-6">
+      <h1 className="font-bold text-2xl mb-4">Home Page</h1>
       <ScrumBoard content={categories}></ScrumBoard>
     </div>
   );
